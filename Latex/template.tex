@@ -1,0 +1,147 @@
+
+% TASHUB LATEX TEMPLATE
+% 
+
+
+
+\documentclass[LaTeX2e,10pt,aspectratio=169]{beamer}
+\usefonttheme[onlymath]{serif}
+
+\usepackage[numbers]{natbib}
+\usepackage{multimedia}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{tikz}
+
+
+\definecolor{sotonMB}{rgb}{0 0.3594 0.5156} % soton marine blue (7469)
+\definecolor{sotonCB}{rgb}{0.1 0.6844 0.7703} % soton cyan blue (3145)
+\definecolor{sotonLB}{rgb}{0 0.5938 0.7617} % soton light blue (313)
+\definecolor{sotonDG}{rgb}{0.3164 0.3828 0.4336} % soton dark grey (7545)
+\definecolor{sotonGR}{rgb}{0.6367 0.5653 0.4180} % soton green (5777)
+\definecolor{sotonME}{rgb}{0.7305 0.7305 0.7305} % soton metal (877)
+\definecolor{sotonLG}{rgb}{0.6406 0.6797 0.7070} % soton light grey (7543)
+
+\definecolor{sotonyel}{rgb}{.99999 .70196 .00000} % soton yellow
+\definecolor{sotonora}{rgb}{.99608 .24314 .07843} % soton orange
+\definecolor{sotonred}{rgb}{.94118 .05882 .17255} % soton red
+\definecolor{sotonrus}{rgb}{.67059 .07059 .06275} % soton russet
+\definecolor{sotonbrn}{rgb}{.54118 .25490 .16863} % soton brown
+\definecolor{sotonpnk}{rgb}{.88627 .41176 .62353} % soton pink
+\definecolor{sotonppl}{rgb}{.90 .90 .99} % soton purple
+
+\setbeamertemplate{background canvas}[vertical shading][top=white,bottom=sotonppl]
+\setbeamersize{text margin left=0mm,text margin right=1mm} 
+\setbeamercolor{background canvas}{bg=}
+\setbeamercolor{button border}{bg=sotonMB, fg=sotonCB}
+\setbeamercolor{button}{bg=sotonMB, fg=DarkRed}
+\setbeamersize{text margin left=1cm,text margin right=1mm} 
+
+% COLORS AND BULLET POINT SETTINGS
+\setbeamercolor{title page}{fg=purple}
+\setbeamercolor{block title}{fg=sotonMB}
+\setbeamercolor{frametitle}{fg=purple}
+\setbeamercolor{framesubtitle}{fg=sotonMB}
+\setbeamercolor{alerted text}{fg=sotonMB}
+\setbeamercolor{normal text}{fg=white}
+\setbeamercolor{titlelike}{fg=sotonMB}
+\setbeamercolor{author}{fg=darkgray}
+\setbeamercolor{date}{fg=darkgray}
+\setbeamercolor{item}{fg=purple}
+\setbeamercolor{caption name}{fg=darkgray}
+\setbeamercolor{footline text}{fg=darkgray}
+\setbeamertemplate{itemize item}[triangle]
+\setbeamertemplate{itemize subitem}[triangle]
+\setbeamertemplate{itemize subsubitem}[square]
+
+% make title appear a bit lower
+\addtobeamertemplate{frametitle}{\vskip10pt}{} 
+
+% LOGOS
+\graphicspath{{./Logos/}}
+\newcommand{\putlogoTAS}{\includegraphics[width=3.5cm]{TAS-logo-CMYK-1_transparent.png}} % for TAS
+\newcommand{\putlogoUni}{\includegraphics[width=3.5cm]{UOS_CMYK.pdf}} % for UoS
+
+% TITLE PAGE
+
+\setbeamertemplate{title page}{
+	\vskip30pt
+	\sc    % capitals
+	\begin{centering}
+		\vspace{0.5cm}
+		\huge \inserttitle \\ \insertsubtitle 
+		\small{
+			\vskip20pt
+			\insertauthor \\
+			\vskip20pt
+			\centering
+			\insertdate \\~\\~\\
+			}
+	\end{centering}
+}
+\setlength{\unitlength}{1cm}
+
+
+
+
+\author{Jane Doe}  % YOUR NAME HERE
+\date{\today}      % DATE
+\title{My Amazing Presentation} % TITLE
+\begin{document}
+
+% HEADLINES, FOOTLINES, AND BACKGROUND
+
+% headline for the title page
+\setbeamertemplate{headline}{
+	\hspace{50pt}  % logo on the right
+}
+\usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{blankslide.png}}
+\frame{\titlepage}
+\addtocounter{framenumber}{-1} % Do not count the title frame!
+
+\setbeamertemplate{headline}{
+	\vskip25pt % prevents logo added on normal pages
+}
+
+\setbeamertemplate{background} % ! SETS THE TASHUB LOGOS ON THE SLIDES
+{\includegraphics[width=\paperwidth, height=\paperheight]{blankslide.png}}
+
+
+\begin{frame}{Introductory slide}
+% make as many nested bullet points as you want
+\begin{minipage}{0.50\textwidth}  % use a minipage if you like two different columns, e.g. bullet points left and pictures right as here
+\begin{itemize}			% bullet points left
+\item Top-level bullet 1
+\begin{itemize}
+\item Bottom-level bullet point 1
+\item Bottom-level bullet point 2
+\end{itemize}
+\item Top-level bullet 1
+\begin{itemize}
+\item Bottom-level bullet point 1
+\item Bottom-level bullet point 2
+\end{itemize} 
+\end{itemize}
+\end{minipage}
+\begin{minipage}{0.26\textwidth} % pictures right
+\centering
+\vspace{0.15cm}
+\fbox{
+\parbox[c]{0.6\textwidth}{  % little frame around the figure
+\includegraphics[width=0.6\textwidth]{example-image-a}  % figure
+}
+}\\
+ some caption  \\
+\vspace{0.15cm}
+\fbox{
+\parbox[c]{0.6\textwidth}{   % little frame around the figure
+\includegraphics[width=0.6\textwidth]{example-image-b} % figure
+}
+}\\
+ some other caption  \\
+\end{minipage}
+\end{frame}
+
+
+\end{document}
+
